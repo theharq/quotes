@@ -1,2 +1,11 @@
-<h1><%= @quote.content %></h1>
-<p><%= @quote.author %></p>
+<p id="quote"><%= @quote.content %></p>
+<p id="author"><%= @quote.author %></p>
+
+<% content_for(:javascript) do %>
+  <script>
+    $(document).ready(function() {
+      // Call the index endpoint every 10 minutes
+      setInterval(function() { $.get("/quotes.js"); }, 600000);
+    });
+  </script>
+<% end %>
