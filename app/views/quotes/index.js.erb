@@ -1,2 +1,3 @@
 $("#quote").text("<%= @quote.content.html_safe %>");
 $("#author").text("<%= @quote.author.html_safe %>");
+$("#wrapper").css('backgroundImage','url(<%= @url.html_safe %>)');
